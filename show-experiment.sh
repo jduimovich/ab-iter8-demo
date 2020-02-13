@@ -1,0 +1,1 @@
+watch kubectl get experiment  -n $NS  
