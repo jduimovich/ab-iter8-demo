@@ -15,3 +15,5 @@ kubectl apply \
 export NS=demo-iter8
 kubectl apply -f abapp/namespace.yaml 
 kubectl apply -f abapp -n $NS
+
+open http://localhost/ui

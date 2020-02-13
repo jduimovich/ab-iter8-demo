@@ -1,13 +1,13 @@
 apiVersion: iter8.tools/v1alpha1
 kind: Experiment
 metadata:
-  name: id-0213134823
+  name: id-0213135721
 spec:
   targetService:
     name: demoservice
     apiVersion: v1
-    baseline: demoservice-v1
-    candidate: demoservice-v2
+    baseline: demoservice-v2
+    candidate: demoservice-v1
   trafficControl:
     strategy: check_and_increment
     interval: 10s
