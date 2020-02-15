@@ -12,7 +12,7 @@ kubectl apply \
     -f https://raw.githubusercontent.com/iter8-tools/iter8-controller/master/install/iter8-controller.yaml 
 
 
-export NS=demo-iter8
+export NS=kabanero
 kubectl apply -f abapp/namespace.yaml 
 kubectl apply -f abapp -n $NS
 
