@@ -1,0 +1,7 @@
+
+export NS=$(sh ns)
+
+C=$(kubectl get pods -n $NS | grep config | cut -d ' ' -f1)
+echo $C
+kubectl port-forward $C -n $NS 9099:8080
+
