@@ -1,0 +1,2 @@
+DEPLOY=abapp 
+yq r $DEPLOY/namespace.yaml  metadata.name

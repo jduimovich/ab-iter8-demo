@@ -1,0 +1,10 @@
+
+DEPLOY=abapp 
+
+VSHOST=$(yq r $DEPLOY/gateway.yaml "spec.servers[0].hosts[0]")
+ 
+
+if [ "$VSHOST" = "*" ]; then
+    VSHOST='localhost' 
+fi
+echo $VSHOST
