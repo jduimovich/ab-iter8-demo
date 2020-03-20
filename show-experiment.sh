@@ -1,1 +1,4 @@
-watch kubectl get experiment  -n $NS  
+
+export NS=$(sh ns)
+
+kubectl get experiment  -n $NS -w

@@ -26,5 +26,6 @@ echo "------- running this experiment ------------"
 cat $TEMPLATE
 echo "------- ^^^^^^ ------------"
 
+export NS=$(sh ns)
 kubectl apply -f $TEMPLATE -n $NS
 

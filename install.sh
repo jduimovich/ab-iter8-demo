@@ -12,8 +12,10 @@ kubectl apply \
     -f https://raw.githubusercontent.com/iter8-tools/iter8-controller/master/install/iter8-controller.yaml 
 
 
-export NS=kabanero
+
+export NS=$(sh ns)
+export VSHOST=$(sh host)
+
 kubectl apply -f abapp/namespace.yaml 
 kubectl apply -f abapp -n $NS
-
-open http://localhost/ui
+open http://$VSHOST/ui

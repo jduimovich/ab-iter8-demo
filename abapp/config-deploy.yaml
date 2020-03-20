@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-v1
+  labels:
+    app: config
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config
+  template:
+    metadata:
+      labels:  
+        app: config
+    spec: 
+      containers:
+      - name: config
+        image: jduimovich/kdemo-config:200214085025
+        resources:
+          limits:
+            cpu: "400m"
+            memory: "256Mi"
+          requests:
+            cpu: "400m"
+            memory: "128Mi"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+

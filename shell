@@ -1,0 +1,8 @@
+
+
+export NS=$(sh ns)
+
+C=$(kubectl get pods -n $NS | grep config | cut -d ' ' -f1)
+
+echo $C
+kubectl exec $C -it -n $NS /bin/bash

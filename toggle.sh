@@ -1,4 +1,5 @@
 
+export NS=$(sh ns)
 
 V1_IMAGE=$(kubectl get deployments -n $NS demoservice-v1 -o yaml | yq r - spec.template.spec.containers[0].image)
 V2_IMAGE=$(kubectl get deployments -n $NS demoservice-v2 -o yaml | yq r - spec.template.spec.containers[0].image)
@@ -17,8 +18,8 @@ echo Running AB Roll Forward
 echo demoservice-v1 is $V1_IMAGE  
 echo demoservice-v2 is $V2_IMAGE
 echo Active Version is $VERSION 
- 
- if [ $VERSION == "v1" ] ; then 
+
+ if [ "$VERSION" == "v1" ] ; then 
     sh run-experiment.sh demoservice-v1 demoservice-v2
   else   
     sh run-experiment.sh demoservice-v2 demoservice-v1
